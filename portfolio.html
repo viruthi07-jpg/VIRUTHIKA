@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Viruthika S | ECE Student – Embedded Systems & IoT</title>
+<meta name="description" content="Portfolio of Viruthika S, an Electronics and Communication Engineering student interested in embedded systems, IoT, digital electronics and circuit design.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f8fc;--card:#fff;--ink:#14213d;--muted:#5b6478;--navy:#14213d;--sky:#6cb4ee;--lav:#9b8cf0;--line:#e3e6f0;--glow:#cfe3fb}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--lav);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+section{padding:84px 0}
+h1,h2,h3{line-height:1.15;letter-spacing:-.02em}
+h2{font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:12px}
+.lead{color:var(--muted);max-width:60ch;margin-bottom:36px}
+em.serif{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-weight:400;color:var(--lav)}
+/* nav */
+header{position:sticky;top:12px;z-index:50;padding:0 16px}
+nav{max-width:760px;margin:12px auto 0;background:rgba(255,255,255,.85);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:999px;padding:8px 12px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.logo{width:34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:600;font-size:.85rem;text-decoration:none}
+.links{display:flex;gap:2px;list-style:none;padding:0}
+.links a{display:block;padding:7px 12px;border-radius:999px;text-decoration:none;font-size:.88rem;color:var(--muted)}
+.links a:hover,.links a.on{color:var(--ink);background:#eef0f8}
+.burger{display:none;background:none;border:1px solid var(--line);border-radius:10px;padding:6px 10px;font-size:1rem;cursor:pointer}
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:12px;font:500 .95rem Inter,sans-serif;text-decoration:none;cursor:pointer;border:1px solid var(--line);background:#fff;color:var(--ink);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(20,33,61,.12)}
+.btn.dark{background:var(--navy);color:#fff;border-color:var(--navy)}
+.btn[aria-disabled=true]{opacity:.55;cursor:not-allowed;transform:none;box-shadow:none}
+.sm{padding:8px 16px;font-size:.85rem}
+/* hero */
+.hero{padding:40px 0 70px;position:relative;overflow:hidden}
+.circuit{position:absolute;inset:0;width:100%;height:100%;opacity:.5;pointer-events:none}
+.circuit path{fill:none;stroke:var(--sky);stroke-width:1.2;stroke-dasharray:6 10;animation:flow 22s linear infinite}
+.circuit circle{fill:var(--lav)}
+@keyframes flow{to{stroke-dashoffset:-320}}
+.heroGrid{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center;min-height:540px}
+.badge{display:inline-block;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.82rem;color:var(--muted);margin-bottom:22px}
+.hero h1{font-size:clamp(2.6rem,6vw,4.4rem);font-weight:500}
+.hero .sub{font-size:1.15rem;font-weight:500;margin:18px 0 6px}
+.hero .tag{color:var(--lav);font-weight:500;margin-bottom:14px}
+.hero p.intro{color:var(--muted);max-width:52ch;margin-bottom:28px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.photoWrap{position:relative;display:flex;justify-content:center}
+.photoWrap:before{content:"";position:absolute;width:85%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,var(--glow),transparent 70%);top:8%}
+.photo{position:relative;width:min(380px,100%);aspect-ratio:4/5;border-radius:28px;background:linear-gradient(160deg,#e8eefb,#d9d4f7);display:grid;place-items:center;overflow:hidden;font-size:4rem;color:var(--navy);font-weight:600;border:1px solid var(--line)}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
+/* cards */
+.grid{display:grid;gap:18px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px}
+.card h3{font-size:1.1rem;margin-bottom:8px}
+.card p,.card li{color:var(--muted);font-size:.95rem}
+.ico{width:42px;height:42px;border-radius:12px;background:#eef0fb;display:grid;place-items:center;margin-bottom:14px;color:var(--navy)}
+.ico svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.interest{transition:transform .2s}.interest:hover{transform:translateY(-4px)}
+ul.plain{padding-left:18px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{background:#eef0fb;border-radius:999px;padding:4px 12px;font-size:.8rem;color:var(--navy)}
+.about{display:grid;grid-template-columns:1.2fr .8fr;gap:36px}
+.about p{color:var(--muted);margin-bottom:14px}
+/* timeline */
+.tl{border-left:2px solid var(--line);padding-left:28px;display:grid;gap:20px}
+.tl .card{position:relative}
+.tl .card:before{content:"";position:absolute;left:-37px;top:30px;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--sky)}
+.tl .cur{border-color:var(--lav)}.tl .cur:before{background:var(--lav);border-color:var(--lav)}
+.meta{font-size:.88rem;color:var(--muted)}
+/* projects */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.filters button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 16px;font:500 .88rem Inter;cursor:pointer;color:var(--muted)}
+.filters button[aria-pressed=true]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.proj .art{height:110px;border-radius:12px;margin-bottom:16px;background:linear-gradient(135deg,#e8eefb,#e3defa);display:grid;place-items:center;color:var(--navy)}
+.proj .art svg{width:44px;height:44px;stroke:currentColor;fill:none;stroke-width:1.4}
+details{margin-top:16px;border-top:1px solid var(--line);padding-top:12px}
+summary{cursor:pointer;font-weight:500;font-size:.92rem;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary:after{content:" +";color:var(--lav)}details[open] summary:after{content:" –"}
+dl{margin-top:12px;display:grid;gap:10px}
+dt{font-weight:500;font-size:.85rem}dd{font-size:.88rem;color:var(--muted)}
+.ph{font-style:italic}
+/* cert */
+.cert .box{border:1.5px dashed var(--line);border-radius:12px;padding:18px;text-align:center;color:var(--muted);font-size:.88rem;margin:14px 0}
+.cert dl{margin:0 0 12px}
+/* contact */
+form{display:grid;gap:14px}
+label{font-size:.88rem;font-weight:500;display:block;margin-bottom:4px}
+input,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);font:inherit;background:#fff}
+.err{color:#b3261e;font-size:.82rem;min-height:1em}
+#status{font-size:.92rem;padding:12px 14px;border-radius:12px;display:none}
+#status.ok{display:block;background:#e8f6ee;color:#146c2e}#status.bad{display:block;background:#fdeceb;color:#b3261e}
+.linkbtn{background:none;border:0;color:var(--lav);cursor:pointer;font:500 .88rem Inter;text-decoration:underline;padding:0}
+footer{border-top:1px solid var(--line);padding:40px 0;background:#fff}
+.foot{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}
+.foot ul{display:flex;gap:16px;list-style:none;padding:0;flex-wrap:wrap}
+.foot a{text-decoration:none;color:var(--muted);font-size:.9rem}
+.top{position:fixed;right:20px;bottom:20px;width:44px;height:44px;border-radius:50%;border:0;background:var(--navy);color:#fff;cursor:pointer;font-size:1.1rem;opacity:0;pointer-events:none;transition:opacity .2s}
+.top.show{opacity:1;pointer-events:auto}
+@media(max-width:860px){
+ .heroGrid,.about{grid-template-columns:1fr}.g3{grid-template-columns:1fr 1fr}.photoWrap{order:-1}.photo{width:260px}
+ .burger{display:block}.links{display:none;position:absolute;top:64px;left:16px;right:16px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:10px;flex-direction:column}
+ .links.open{display:flex}
+}
+@media(max-width:600px){.g3,.g2{grid-template-columns:1fr}section{padding:60px 0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header>
+<nav aria-label="Main">
+ <a class="logo" href="#home" aria-label="Home">VS</a>
+ <ul class="links" id="menu">
+  <li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#education">Education</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#certifications">Certifications</a></li><li><a href="#contact">Contact</a></li>
+ </ul>
+ <a class="btn dark sm resumeBtn" href="#contact">Download Resume</a>
+ <button class="burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Toggle menu">☰</button>
+</nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <svg class="circuit" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <path d="M0 120H240L290 70H520"/><path d="M0 460H180L240 520H460L520 460H700"/><path d="M1200 90H980L930 140H760"/><path d="M1200 500H1010L960 450H820V380"/>
+  <circle cx="520" cy="70" r="4"/><circle cx="700" cy="460" r="4"/><circle cx="760" cy="140" r="4"/><circle cx="820" cy="380" r="4"/>
+ </svg>
+ <div class="wrap heroGrid">
+  <div>
+   <span class="badge">Open to internships and learning opportunities</span>
+   <h1>Hi, I'm <em class="serif">Viruthika S</em></h1>
+   <p class="sub">Electronics and Communication Engineering Student</p>
+   <p class="tag">Building Smart Solutions Through Electronics, Embedded Systems and IoT.</p>
+   <p class="intro">I am an enthusiastic ECE student passionate about electronics, embedded systems, circuit design, and intelligent technology. I enjoy exploring innovative ideas and developing practical solutions to real-world problems.</p>
+   <div class="cta">
+    <a class="btn dark" href="#projects">Explore My Projects</a>
+    <a class="btn" href="#contact">Contact Me</a>
+    <a class="btn resumeBtn" href="#contact">Download Resume</a>
+   </div>
+  </div>
+  <div class="photoWrap"><div class="photo" id="photo" role="img" aria-label="Profile photo of Viruthika S">VS</div></div>
+ </div>
+</section>
+
+<section id="about"><div class="wrap">
+ <h2>About Me</h2>
+ <div class="about">
+  <div>
+   <p>I am pursuing a Bachelor of Engineering in Electronics and Communication Engineering at M. Kumarasamy College of Engineering. My interests include embedded systems, Internet of Things, digital electronics, communication systems, and circuit simulation.</p>
+   <p>I enjoy learning new technologies, collaborating with teams, and developing innovative engineering projects. My goal is to strengthen my technical knowledge and contribute to meaningful technology solutions.</p>
+   <div class="card"><h3>Currently learning</h3><div class="chips" id="learning"></div></div>
+  </div>
+  <div class="grid" id="highlights"></div>
+ </div>
+</div></section>
+
+<section id="education"><div class="wrap">
+ <h2>Education</h2>
+ <div class="tl">
+  <div class="card cur"><h3>Bachelor of Engineering – Electronics and Communication Engineering</h3><p class="meta">M. Kumarasamy College of Engineering · 2025–2029 · Pursuing</p></div>
+  <div class="card"><h3>Higher Secondary – Class XII</h3><p class="meta">Kongu Matriculation Higher Secondary School · 2024–2025 · 86.17%</p></div>
+  <div class="card"><h3>Secondary – Class X</h3><p class="meta">Kandasamy Kandar Matriculation Higher Secondary School · 2022–2023 · 74%</p></div>
+ </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+ <h2>Technical Skills</h2>
+ <p class="lead">Edit the level labels in the <code>SKILLS</code> list at the bottom of this file.</p>
+ <div class="grid g3" id="skillGrid"></div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+ <h2>Projects</h2>
+ <p class="lead">Add a new project by copying one entry in the <code>PROJECTS</code> list at the bottom of this file.</p>
+ <div class="filters" id="filters" role="group" aria-label="Filter projects"></div>
+ <div class="grid g2" id="projGrid"></div>
+</div></section>
+
+<section id="certifications"><div class="wrap">
+ <h2>Certifications</h2>
+ <p class="lead">Certificates appear here only after you add a real file link in the <code>CERTS</code> list.</p>
+ <div class="grid g3" id="certGrid"></div>
+</div></section>
+
+<section id="interests"><div class="wrap">
+ <h2>Areas of Interest</h2>
+ <div class="grid g3" id="interestGrid"></div>
+</div></section>
+
+<section id="strengths"><div class="wrap">
+ <h2>Professional Strengths</h2>
+ <div class="grid g3" id="strengthGrid"></div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+ <h2>Let's Connect</h2>
+ <p class="lead">I am interested in learning opportunities, engineering projects, internships, and collaborations. Feel free to connect with me.</p>
+ <div class="about">
+  <div class="card">
+   <h3>Contact details</h3>
+   <p>Email: <a href="mailto:viruthi07@gmail.com">viruthi07@gmail.com</a></p>
+   <p>Phone: <span id="phone">Hidden</span> <button class="linkbtn" id="phoneBtn" type="button">Show</button></p>
+   <div class="cta" style="margin-top:18px">
+    <a class="btn dark sm" href="mailto:viruthi07@gmail.com">Email Me</a>
+    <a class="btn sm" id="li" href="#contact" aria-disabled="true">LinkedIn</a>
+    <a class="btn sm" id="gh" href="#contact" aria-disabled="true">GitHub</a>
+   </div>
+  </div>
+  <form id="form" novalidate class="card">
+   <div><label for="n">Name</label><input id="n" name="name" autocomplete="name"><div class="err" data-for="n"></div></div>
+   <div><label for="e">Email</label><input id="e" type="email" autocomplete="email"><div class="err" data-for="e"></div></div>
+   <div><label for="s">Subject</label><input id="s"><div class="err" data-for="s"></div></div>
+   <div><label for="m">Message</label><textarea id="m" rows="4"></textarea><div class="err" data-for="m"></div></div>
+   <button class="btn dark" type="submit">Open in my email app</button>
+   <div id="status" role="status"></div>
+  </form>
+ </div>
+</div></section>
+</main>
+
+<footer><div class="wrap foot">
+ <div><p>Designed with passion by Viruthika S</p><p class="meta">© <span id="yr"></span> Viruthika S. All rights reserved.</p></div>
+ <ul><li><a href="#home">Home</a></li><li><a href="#projects">Projects</a></li><li><a href="#certifications">Certifications</a></li><li><a href="mailto:viruthi07@gmail.com">viruthi07@gmail.com</a></li></ul>
+</div></footer>
+<button class="top" id="top" aria-label="Back to top">↑</button>
+
+<script>
+/* ===== EDIT ME ===== */
+const CONFIG={
+ photoUrl:"",          // e.g. "me.jpg" – put your photo next to this file
+ resumeUrl:"",         // e.g. "Viruthika_S_Resume.pdf" – button downloads it once set
+ linkedin:"",          // full LinkedIn URL
+ github:""             // full GitHub URL
+};
+const LEARNING=["Add what you are learning now"];
+const SKILLS=[
+ {t:"Embedded Systems",i:"cpu",items:["Embedded System Programming","Microcontroller Fundamentals","Hardware and Software Integration"],lvl:"Beginner"},
+ {t:"Electronics and Circuit Design",i:"zap",items:["Circuit Design and Simulation","Analog Electronics","Digital Electronics","Basic Electronic Component Interfacing"],lvl:"Beginner"},
+ {t:"Communication and IoT",i:"wifi",items:["Communication System Fundamentals","Internet of Things (IoT)","Sensor-Based Systems"],lvl:"Beginner"}
+];
+const NA="Add your details here.";
+const D=(o={})=>Object.assign({"Problem statement":NA,"Project objective":NA,"Proposed solution":NA,"Hardware and software components":NA,"My individual contribution":NA,"Working principle":NA,"Challenges faced":NA,"Future improvements":NA},o);
+const PROJECTS=[
+ {t:"Smart Sleep Apnea Detection System",d:"A smart monitoring concept designed to identify potential breathing irregularities during sleep using sensor-based monitoring and electronic systems.",tech:["Embedded Systems","Sensors","Signal Monitoring"],cat:["Embedded Systems","IoT"],det:D()},
+ {t:"Smart Multi-Protection Well Motor System Using IC741",d:"An electronic protection system concept using IC741-based comparator circuits to monitor selected conditions and improve the protection of a well motor.",tech:["IC741 Op-Amp","Comparator Circuits","Analog Electronics","Circuit Design"],cat:["Electronics"],det:D()},
+ {t:"Smart Automatic Weather Detection System",d:"A sensor-based electronic system designed to monitor environmental conditions and provide weather-related readings.",tech:["Sensors","Embedded Systems","Environmental Monitoring"],cat:["Embedded Systems","IoT"],det:D()},
+ {t:"B-Tree Database System",d:"A software project focused on organizing and managing data using the B-tree data structure for efficient searching and data operations.",tech:["Data Structures","B-Tree","Database Concepts"],cat:["Software"],det:D()}
+];
+const CERTS=[
+ {t:"PCB Design Certification",org:"",date:"",file:""},
+ {t:"Embedded System Certification",org:"",date:"",file:""},
+ {t:"Internet of Things (IoT) Certification",org:"",date:"",file:""}
+]; // file: "pcb.pdf" or "pcb.jpg" once uploaded next to this file
+const INTERESTS=[["cpu","Embedded Systems","Programming small computers that sense and control hardware."],["wifi","Internet of Things","Connecting devices and sensors so they can share data."],["zap","Digital Electronics","Logic gates, counters and the circuits built from them."],["chip","Circuit Design and Simulation","Designing and testing circuits before building them."],["sensor","Sensor-Based Applications","Turning real-world signals into readable data."],["bulb","Smart Electronic Systems","Combining sensing and control to solve everyday problems."]];
+const STRENGTHS=[["chat","Communication Skills"],["users","Teamwork and Collaboration"],["check","Responsibility"],["sun","Positive Attitude"],["book","Willingness to Learn"]];
+const HIGHLIGHTS=[["zap","Electronics and Circuit Design"],["cpu","Embedded Systems and IoT"],["users","Innovation and Team Collaboration"]];
+/* ===== END EDIT ===== */
+
+const P={cpu:'<rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/>',zap:'<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>',wifi:'<path d="M5 12a10 10 0 0 1 14 0M8.5 15.5a5 5 0 0 1 7 0"/><circle cx="12" cy="19" r="1"/>',chip:'<path d="M3 12h4l2-5 4 10 2-5h6"/>',sensor:'<circle cx="12" cy="12" r="3"/><path d="M5 12a7 7 0 0 1 7-7M19 12a7 7 0 0 1-7 7"/>',bulb:'<path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10c1 1 1 2 1 3h6c0-1 0-2 1-3a6 6 0 0 0-4-10z"/>',chat:'<path d="M4 5h16v11H9l-5 4z"/>',users:'<circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0M16 5a3 3 0 0 1 0 6M18 20a6 6 0 0 0-3-5"/>',check:'<circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/>',sun:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M5 19l1.5-1.5M17.5 6.5 19 5"/>',book:'<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 19V5"/>'};
+const ic=n=>`<div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true">${P[n]}</svg></div>`;
+const $=s=>document.querySelector(s);
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+// photo + resume + socials
+if(CONFIG.photoUrl){$("#photo").innerHTML=`<img src="${esc(CONFIG.photoUrl)}" alt="Viruthika S" loading="eager">`}
+document.querySelectorAll(".resumeBtn").forEach(b=>{
+ if(CONFIG.resumeUrl){b.href=CONFIG.resumeUrl;b.setAttribute("download","Viruthika_S_Resume.pdf")}
+ else{b.style.display="none"}
+});
+[["#li",CONFIG.linkedin],["#gh",CONFIG.github]].forEach(([s,u])=>{const a=$(s);if(u){a.href=u;a.target="_blank";a.rel="noopener";a.removeAttribute("aria-disabled")}else{a.title="Add your link in CONFIG";a.addEventListener("click",e=>e.preventDefault())}});
+
+// simple sections
+$("#learning").innerHTML=LEARNING.map(x=>`<span class="chip">${esc(x)}</span>`).join("");
+$("#highlights").innerHTML=HIGHLIGHTS.map(([i,t])=>`<div class="card">${ic(i)}<h3>${t}</h3></div>`).join("");
+$("#skillGrid").innerHTML=SKILLS.map(s=>`<div class="card">${ic(s.i)}<h3>${s.t}</h3><ul class="plain">${s.items.map(x=>`<li>${x}</li>`).join("")}</ul><div class="chips"><span class="chip">${s.lvl}</span></div></div>`).join("");
+$("#interestGrid").innerHTML=INTERESTS.map(([i,t,d])=>`<div class="card interest">${ic(i)}<h3>${t}</h3><p>${d}</p></div>`).join("");
+$("#strengthGrid").innerHTML=STRENGTHS.map(([i,t])=>`<div class="card">${ic(i)}<h3>${t}</h3></div>`).join("");
+
+// projects
+const cats=["All Projects","Embedded Systems","Electronics","IoT","Software"];
+let active="All Projects";
+function drawProjects(){
+ $("#filters").innerHTML=cats.map(c=>`<button type="button" aria-pressed="${c===active}" data-c="${c}">${c}</button>`).join("");
+ $("#projGrid").innerHTML=PROJECTS.filter(p=>active==="All Projects"||p.cat.includes(active)).map(p=>`
+ <article class="card proj"><div class="art"><svg viewBox="0 0 24 24" aria-hidden="true">${P[p.cat[0]==="Software"?"chip":p.cat[0]==="Electronics"?"zap":"cpu"]}</svg></div>
+ <h3>${esc(p.t)}</h3><p>${esc(p.d)}</p>
+ <div class="chips">${p.tech.map(x=>`<span class="chip">${esc(x)}</span>`).join("")}</div>
+ <details><summary>View Details</summary><dl>${Object.entries(p.det).map(([k,v])=>`<div><dt>${k}</dt><dd class="${v===NA?"ph":""}">${esc(v)}</dd></div>`).join("")}</dl></details></article>`).join("");
+}
+$("#filters").addEventListener("click",e=>{const b=e.target.closest("button");if(b){active=b.dataset.c;drawProjects()}});
+drawProjects();
+
+// certifications
+$("#certGrid").innerHTML=CERTS.map(c=>`<div class="card cert"><h3>${esc(c.t)}</h3>
+ <dl><div><dt>Issuing organization</dt><dd class="${c.org?"":"ph"}">${esc(c.org||"Add organization")}</dd></div><div><dt>Date of completion</dt><dd class="${c.date?"":"ph"}">${esc(c.date||"Add date")}</dd></div></dl>
+ ${c.file?`<a class="btn sm" href="${esc(c.file)}" target="_blank" rel="noopener">View Certificate</a>`:`<div class="box">Certificate not uploaded yet</div>`}</div>`).join("");
+
+// phone toggle (hidden by default)
+let shown=false;
+$("#phoneBtn").addEventListener("click",()=>{shown=!shown;$("#phone").textContent=shown?"8807326327":"Hidden";$("#phoneBtn").textContent=shown?"Hide":"Show"});
+
+// form: validates, then opens the visitor's email app (no backend, nothing is sent automatically)
+$("#form").addEventListener("submit",e=>{
+ e.preventDefault();
+ const v={n:$("#n").value.trim(),e:$("#e").value.trim(),s:$("#s").value.trim(),m:$("#m").value.trim()};
+ const msg={n:"Enter your name.",e:/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v.e)?"":"Enter a valid email address.",s:"Enter a subject.",m:v.m.length<10?"Write a message of at least 10 characters.":""};
+ let bad=false;
+ Object.keys(v).forEach(k=>{const err=k==="e"?msg.e:(v[k]?(k==="m"?msg.m:""):msg[k]);document.querySelector(`[data-for=${k}]`).textContent=err;if(err)bad=true});
+ const st=$("#status");
+ if(bad){st.className="bad";st.textContent="Fix the highlighted fields and try again.";return}
+ location.href=`mailto:viruthi07@gmail.com?subject=${encodeURIComponent(v.s)}&body=${encodeURIComponent(v.m+"\n\n— "+v.n+" ("+v.e+")")}`;
+ st.className="ok";st.textContent="Your email app should open with this message ready. It is not sent until you press Send there.";
+});
+
+// nav, scroll, footer
+const menu=$("#menu"),burger=$("#burger");
+burger.addEventListener("click",()=>{const o=menu.classList.toggle("open");burger.setAttribute("aria-expanded",o)});
+menu.addEventListener("click",e=>{if(e.target.tagName==="A"){menu.classList.remove("open");burger.setAttribute("aria-expanded",false)}});
+const links=[...menu.querySelectorAll("a")];
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting)links.forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+en.target.id))}),{rootMargin:"-45% 0px -50% 0px"});
+document.querySelectorAll("main section[id]").forEach(s=>io.observe(s));
+$("#yr").textContent=new Date().getFullYear();
+$("#top").addEventListener("click",()=>scrollTo({top:0,behavior:"smooth"}));
+addEventListener("scroll",()=>$("#top").classList.toggle("show",scrollY>600),{passive:true});
+</script>
+</body>
+</html>
